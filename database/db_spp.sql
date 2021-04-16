@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2021 at 08:35 AM
+-- Generation Time: Apr 16, 2021 at 10:05 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -38,8 +38,16 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `kompetensi_keahlian`) VALUES
-(1, 'X-1', 'Rekayasa Perangkat Lunak'),
-(2, 'X-2', 'Teknik Komputer & Jaringan');
+(5, 'X-RPL', 'Rekayasa Perangkat Lunak'),
+(6, 'XI-RPL', 'Rekayasa Perangkat Lunak'),
+(7, 'XII-RPL', 'Rekayasa Perangkat Lunak'),
+(8, 'X-TKJ', 'Teknik Komputer & Jaringan'),
+(9, 'XI-TKJ', 'Teknik Komputer & Jaringan'),
+(10, 'XII-TKJ', 'Teknik Komputer & Jaringan'),
+(11, 'X-OTKP', 'Otomatisasi dan Tata Kelola Perkantoran'),
+(12, 'XII-OTKP', 'Otomatisasi dan Tata Kelola Perkantoran'),
+(13, 'XII-OTKP', 'Otomatisasi dan Tata Kelola Perkantoran'),
+(14, 'X-MM', 'Multimedia');
 
 -- --------------------------------------------------------
 
@@ -57,13 +65,6 @@ CREATE TABLE `pembayaran` (
   `id_spp` int(11) NOT NULL,
   `jumlah_bayar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pembayaran`
---
-
-INSERT INTO `pembayaran` (`id_pembayaran`, `id_petugas`, `nisn`, `tgl_bayar`, `bulan_dibayar`, `tahun_dibayar`, `id_spp`, `jumlah_bayar`) VALUES
-(1, 1, '7655459790', '2021-04-10', 'April', '2021', 1, 10000);
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ CREATE TABLE `petugas` (
 --
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `level`) VALUES
-(1, 'kyupi123', '16acc2805b356fb23309dd77fed8f2c9', 'David MAO.', 'admin');
+(2, 'admin', 'admin123', 'Admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -99,15 +100,17 @@ CREATE TABLE `siswa` (
   `id_kelas` int(11) NOT NULL,
   `alamat` text NOT NULL,
   `no_telp` varchar(13) NOT NULL,
-  `id_spp` int(11) NOT NULL
+  `id_spp` int(11) NOT NULL,
+  `tanggal_lahir` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `no_telp`, `id_spp`) VALUES
-('7655459790', '18190978', 'Hajime Isayama', 2, 'Jln. Maria Jaya, Kelurahan Paradis, Kecamatan Eldia', '0865756447', 1);
+INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `no_telp`, `id_spp`, `tanggal_lahir`) VALUES
+('006801232', '18197212', 'OOO', 5, 'Jln. Kebon Gedang III', '089526512566', 2, '2021-04-23'),
+('009537126', '18193430', 'David Mangara', 5, 'Jln. Kebon Gedang III', '089526512566', 2, '2021-04-16');
 
 -- --------------------------------------------------------
 
@@ -126,8 +129,8 @@ CREATE TABLE `spp` (
 --
 
 INSERT INTO `spp` (`id_spp`, `tahun`, `nominal`) VALUES
-(1, 2020, 100000),
-(2, 2021, 150000);
+(1, 2020, 5000000),
+(2, 2021, 2500000);
 
 --
 -- Indexes for dumped tables
@@ -176,7 +179,7 @@ ALTER TABLE `spp`
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
@@ -188,7 +191,7 @@ ALTER TABLE `pembayaran`
 -- AUTO_INCREMENT for table `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `spp`
