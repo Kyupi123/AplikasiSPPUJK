@@ -1,0 +1,211 @@
+:root {
+	--sidenavWidth : 208px;
+	--primaryColor : #f3a26b;
+	--secondaryColor : #ffebdf;
+	--thirdColor: ;
+}
+body{
+	background-color: #ffebdf;
+	margin: 16px;
+	text-align: center;
+	font-family: Georgia, serif;
+}
+
+.loginbox {
+	border: none;
+	box-shadow: 4px 4px #ababab;
+	padding: 8px 16px;
+	margin: 16px;
+	border-radius: 8px;
+	background-color: #f3a26b;
+	color: black;
+}
+
+.loginclicky {
+	padding: 8px 16px;
+	margin: 8px;
+	width: 128px;
+	border: none;
+	border-radius: 16px;
+	background-color: #745437;
+	color: white;
+	box-shadow: 4px 4px #ababab;
+}
+
+.form_SPP {
+	max-width: 512px;
+	margin: 16px auto 16px auto;
+}
+.form_SPP div {
+	margin: 16px 16px;
+}
+.form_SPP label {
+	text-align: justify;
+	margin-right: 8px;
+	padding: 8px;
+}
+.form_SPP input {
+	width: 100%;
+	border: none;
+	padding: 8px;
+	border-bottom: 1px solid black;
+	background-color: inherit;
+	margin: 8px;
+	box-sizing: border-box;
+}
+.form_SPP input:focus {
+	outline: none;
+	border-bottom: 1px solid #ababab;
+	transition: 0.25s;
+}
+
+.loginTab{
+	display: inline-table;
+	margin: 16px;
+}
+
+.navbar{
+	height: 56px;
+	width: 100%;
+	position: fixed;
+	background-color: #1114;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	box-shadow: 4px 2px #ababab;
+	padding: 0;
+}
+.navbar div{
+	display: flex;
+	flex-flow: row wrap;
+	background-color: #f3a26b;
+	height: inherit;
+	width: 100%;
+}
+#webLogo {
+	margin-left: auto;
+}
+.navbar  div > a{
+	line-height: 56px; /*Sama dengan ukuran .navbar*/
+	padding: 0 8px 0 8px;
+	box-sizing: border-box;
+	background-color: #745437;
+	text-decoration: none;
+	outline: none;
+	color: black;
+	text-align: center;
+}
+.navbar div > p {
+	padding: 0 1rem 0 1rem;
+	margin-right: 32px;
+	text-align: right;
+	box-sizing: border-box;
+}
+.sidenavToggle {
+	font-size: 32px;
+	cursor: pointer;
+	margin-left: 16px;
+}
+
+.closebtn {
+	position: absolute;
+	float: right;
+	top: 0;
+	left: 170px;
+}
+.sidenav {
+	height: 100%;
+	width: var(--sidenavWidth);
+	margin-top: 56px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #745437;
+	padding-top: 20px;
+	transition: margin-right 0.5s;
+	box-shadow: 4px 4px #ababab;
+}
+.sidenav a, .dropdown-btn {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
+	display: block;
+	border: none;
+	background: none;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	outline: none;
+	overflow-x: hidden; 
+}
+.active {
+  background-color: #f3a26b;
+  color: white;
+}
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+.sidenav div > a {
+	padding: 6px 24px 6px 8px;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+	border: none;
+	background: none;
+	width: 100%;
+	text-align: right;
+	cursor: pointer;
+	outline: none;
+
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+#main {
+	margin: 72px 0 0 var(--sidenavWidth);
+	transition: margin-left .5s;
+}
+#tableControlSection {
+	margin: 0.5rem;
+	padding: 0.5rem;
+	background-color: #f3a26b;
+	box-shadow: 4px 4px #ababab;
+	border-radius: 1rem;
+}
+#insertData {
+	background-color: #745437;
+	color: black;
+	box-shadow: 2px 2px #ababab;
+}
+.tableSPP{
+	margin: 0;
+}
+.tableSPP > th, td{
+	padding: 0 1.5rem 0 1.5rem;
+}
+.tableSPP a {
+	cursor: pointer;
+	text-decoration: none;
+	color: #818181;
+}
+.modal-header{
+	background-color: var(--primaryColor);
+}
+.modal-body{
+	background-color: var(--secondaryColor);
+}
+.modal-footer{
+	background-color: var(--thirdColor);
+}
